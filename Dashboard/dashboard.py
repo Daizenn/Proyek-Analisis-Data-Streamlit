@@ -32,7 +32,7 @@ st.title('Rata - Rata Penyewaan Sepeda berdasarkan Kondisi Cuaca')
 st.bar_chart(avg_weather.set_index('weather_label'), color=st.color_picker('Choose a color'), use_container_width=True)
 
 st.title("Line Chart Jumlah Sewa Sepeda Harian Berdasarkan Bulan")
-st.line_chart(all_df.groupby('mnth_day')['cnt_day'].mean(), color=st.color_picker('Choose a color'))
+st.line_chart(all_df.groupby('mnth_day')['cnt_day'].mean())
 
 st.title("Perbedaan Antara Hari Kerja dan Hari Libur dalam Jumlah Sewa Sepeda Harian")
 fig, ax = plt.subplots(figsize=(10, 6))
