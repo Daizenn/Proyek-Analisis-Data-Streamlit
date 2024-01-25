@@ -23,7 +23,7 @@ df_season = pd.DataFrame(data)
 
 # Display the bar chart
 st.title('Pengaruh Musim Terhadap Jumlah Sewa Sepeda Harian')
-st.bar_chart(df_season.set_index('Season'), color=["#87CEEB", "##483D8B", "#120A8F"])
+st.bar_chart(df_season.set_index('Season'), color=["#87CEEB", "##483D8B", "#120A8F", "#1D2951"])
 
 avg_weather = all_df.groupby('weather_label')['cnt_day'].mean().reset_index().sort_values("cnt_day")
 
