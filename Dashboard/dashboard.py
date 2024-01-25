@@ -11,31 +11,9 @@ if __name__ == "__main__":
     main()
 
 # Inside the main function of app.py
-    
-jam = pd.read_csv("Dashboard/hour.csv")
-jam.head()
-
-jam['dteday'] = pd.to_datetime(jam['dteday'])
-jam['season'] = jam.season.astype('category')
-jam['mnth'] = jam.mnth.astype('category')
-jam['holiday'] = jam.holiday.astype('category')
-jam['weekday'] = jam.weekday.astype('category')
-jam['workingday'] = jam.workingday.astype('category')
-jam['weathersit'] = jam.weathersit.astype('category')
-
-hari = pd.read_csv("Dashboard/day.csv")
-hari.head()
-
-hari['dteday'] = pd.to_datetime(hari['dteday'])
-hari['season'] = hari.season.astype('category')
-hari['mnth'] = hari.mnth.astype('category')
-hari['holiday'] = hari.holiday.astype('category')
-hari['weekday'] = hari.weekday.astype('category')
-hari['workingday'] = hari.workingday.astype('category')
-hari['weathersit'] = hari.weathersit.astype('category')
-
+ 
 # Load cleaned data
-all_df = jam.merge(hari, on='dteday', how='inner', suffixes=('_hour', '_day'))
+all_df = pd.read_csv("Dashboard/all_data.csv")
 
 data_musim = all_df.groupby('season_day')['cnt_day'].mean()
 season_names = ['Spring', 'Summer', 'Fall', 'Winter']
