@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
 # Inside the main function of app.py
     
-jam = pd.read_csv("/content/hour.csv")
+jam = pd.read_csv("hour.csv")
 jam.head()
 
 jam['dteday'] = pd.to_datetime(jam['dteday'])
@@ -23,7 +23,7 @@ jam['weekday'] = jam.weekday.astype('category')
 jam['workingday'] = jam.workingday.astype('category')
 jam['weathersit'] = jam.weathersit.astype('category')
 
-hari = pd.read_csv("/content/day.csv")
+hari = pd.read_csv("day.csv")
 hari.head()
 
 hari['dteday'] = pd.to_datetime(hari['dteday'])
