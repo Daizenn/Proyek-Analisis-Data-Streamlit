@@ -23,13 +23,13 @@ df_season = pd.DataFrame(data)
 
 # Display the bar chart
 st.title('Pengaruh Musim Terhadap Jumlah Sewa Sepeda Harian')
-st.bar_chart(df_season.set_index('Season'), color=color=st.color_picker('Choose a color'))
+st.bar_chart(df_season.set_index('Season'), color=st.color_picker('Choose a color'))
 
 avg_weather = all_df.groupby('weather_label')['cnt_day'].mean().reset_index().sort_values("cnt_day")
 
 # Display the horizontal bar chart with different colors for each category
 st.title('Rata - Rata Penyewaan Sepeda berdasarkan Kondisi Cuaca')
-st.bar_chart(avg_weather.set_index('weather_label'), color=color=st.color_picker('Choose a color'), use_container_width=True)
+st.bar_chart(avg_weather.set_index('weather_label'), color=st.color_picker('Choose a color'), use_container_width=True)
 
 st.title("Line Chart Jumlah Sewa Sepeda Harian Berdasarkan Bulan")
 st.line_chart(all_df.groupby('mnth_day')['cnt_day'].mean(), color=st.color_picker('Choose a color'))
